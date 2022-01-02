@@ -11,29 +11,16 @@ namespace Static
         static void Main(string[] args)
         {
             Console.WriteLine("ENTER RADIUS");
-            Console.WriteLine(Round.Okr(out double L));
-            Console.WriteLine();
-            Console.WriteLine("ENTER RADIUS");
-            Console.WriteLine(Round.S(out double S));
+            double r = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(Round.Okr(r));
+            Console.WriteLine(Round.S(r));
+            Console.WriteLine("Проверка принадлежности точки к площади круга");
+            Console.WriteLine("Ввод координаты по Х");
+            double x = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Ввод координаты по У");
+            double y = Convert.ToDouble(Console.ReadLine());
+            Round.BelongToS(r,x,y);
             Console.ReadKey();
-        }
-    }
-    public static class Round
-    {
-        public static double Okr(out double L)
-        {
-            double r;
-            r = Convert.ToInt32(Console.ReadLine());
-            L = 2 * r * Math.PI;
-            return L;
-        }
-
-        public static double S(out double S)
-        {
-            double r;
-            r = Convert.ToInt32(Console.ReadLine());
-            S = Math.PI * r * r;
-            return S;
         }
     }
 }
